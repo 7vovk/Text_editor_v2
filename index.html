@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <header>
+        <div id="wrapper">
+            <form name="editForm" id="editForm" class="hiddenForm align-c">
+                <input type="button" name="btnS" value="Save" class="buttons w-100">
+                <input type="button" name="btnT" value="Create Table" class="buttons w-100">
+                <input type="button" name="btnL" value="Create List" class="buttons w-100">
+            </form>
+            <form name="headerForm" id="headerForm">
+                <div id="headerFormT">
+                    <input type="button" value="Edit" class="buttons" id="edit">
+                    <input type="button" value="B" class="buttons bold" id="textBold">
+                    <input type="button" value="I" class="buttons italic" id="textItalic">
+                    <input type="button" value="U" class="buttons underline" id="textUnder">
+                    <select name="fontSelect" id="font">
+                  <option value="7pt" id="pt7">7pt</option>
+                  <option value="8pt" id="pt8">8pt</option>
+                  <option value="9pt" id="pt9">9pt</option>
+                  <option value="10pt" id="pt10">10pt</option>
+                  <option value="11pt" id="pt11">11pt</option>
+                  <option value="12pt" id="pt12" selected="true">12pt</option>
+                  <option value="14pt" id="pt14">14pt</option>
+                  <option value="16pt" id="pt16">16pt</option>
+                  <option value="18pt" id="pt18">18pt</option>
+                  <option value="20pt" id="pt20">20pt</option>
+                  <option value="25pt" id="pt25">25pt</option>
+                  <option value="30pt" id="pt30">30pt</option>
+                  <option value="35pt" id="pt35">35pt</option>
+                  <option value="40pt" id="pt40">40pt</option>
+              </select>
+                    <input type="radio" name="textPosition" checked="true" id="rbL">Left
+                    <input type="radio" name="textPosition" id="rbC">Center
+                    <input type="radio" name="textPosition" id="rbR">Right
+                </div>
+                <div id="headerFormB">
+                    Text color: <input type="color" id="textColor">
+                    Background: <input type="radio" name="bg" id="rbBgC" checked="true">color
+                    <input type="radio" name="bg" id="rbBgImg">image
+                    <input type="color" id="bgColor" class="hiddenForm">
+                    <label class="uploadFile" id="chooseImage">
+                        <input type="file" id="bgImage" accept="image/*"> Choose file
+                    </label>
+                </div>
+            </form>
+        </div>
+    </header>
+    <div id="content">
+        <div id="tableMenu" class="hiddenForm">
+            <p> Lines: <input type="number" class="elementsStyle" id="tableLines"></p>
+            <p> Columns: <input type="number" class="elementsStyle" id="tableColunms"></p>
+            <p> Width: <input type="number" class="elementsStyle" id="tableCellWidth"> px</p>
+            <p> Heigh: <input type="number" class="elementsStyle" id="tableCellHeight"> px</p>
+            <p> Border-spacing: <input type="number" class="elementsStyle" id="tableBorderSpacing" value="0"> px</p>
+            <p> Border width: <input type="number" class="elementsStyle" id="tableBorderWidth" value="1"></p>
+             Border line type:
+             <select name="tableBorderStyle" id="tableBorderStyle" class="elementsStyle">
+                 <option value="Solid">Solid</option>
+                 <option value="Dotted">Dotted</option>
+                 <option value="Dashed">Dashed</option>
+                 <option value="Double">Double</option>
+                 <option value="Groove">Groove</option>
+                 <option value="Ridge">Ridge</option>
+                 <option value="Inset">Inset</option>
+                 <option value="Outset">Outset</option>
+             </select>
+            <p> Border color: <input type="color" style="border-radius: 7px" id="tableBorderColor"></p>
+            <h5>( if lines or columns are empty, it won't add anything )</h5>
+            <input type="button" value="Create table" id="btnCreateTable">
+            <input type="button" value="CLear all" id="btnClearTable">
+        </div>
+        <div id="listMenu" class="hiddenForm">
+            <form name="listForm">
+               <div>
+                 List type:
+                 <select name="listStyle" id="listStyle">
+                     <option value="ul">Unordered list</option>
+                     <option value="ol">Ordered list </option>
+                 </select>
+               </div>
+               <div>
+                Markers:
+                 <select name="ulMarkers" id="ulMarkers">
+                     <option value="Circle">Circle</option>
+                     <option value="Disc">Disc</option>
+                     <option value="Square">Square</option>
+                     <option value="None">None</option>
+                 </select>
+                 <select name="olMarkers" id="olMarkers" class="hiddenForm">
+                     <option value="decimal">1, 2, 3...</option>
+                     <option value="lower-alpha">a, b, c...</option>
+                     <option value="lower-greek">α, β, γ...</option>
+                     <option value="upper-alpha">A, B, C...</option>
+                     <option value="upper-roman">I, II, III...</option>
+                     <option value="None">None</option>
+                 </select>
+               </div>
+               <p> Items amount: <input type="number" class="elementsStyle" id="listAmount"></p>
+               <h5>( if amount of items is empty, it won't add anything )</h5>
+               <input type="button" value="Create list" id="btnCreateList">
+               <input type="button" value="CLear all" id="btnClearList">
+            </form>
+        </div>
+        <div id="section" class="section txtAlignL">
+            <section id="text">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi amet odio omnis magnam natus repudiandae ducimus distinctio accusantium eos exercitationem eum sequi, suscipit, sit, voluptatibus. Ducimus, fuga maiores consequatur quod! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum excepturi reiciendis ab beatae nisi impedit ducimus modi nihil dolorum obcaecati consectetur illum maiores deleniti harum, pariatur, molestiae accusamus fugiat aliquid. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas doloremque, voluptatum. Laborum quibusdam ducimus suscipit soluta at explicabo dolorem tempora, sequi recusandae, doloribus porro nam officia iste ab, asperiores ex! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ab eius est inventore temporibus tenetur deleniti voluptatem eaque sequi sunt ipsum libero nostrum voluptate molestias tempora, ad aliquam. Consequatur, saepe. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione deserunt, quis dicta veritatis molestias sint iusto doloribus modi! Optio fugiat dolore, placeat nemo. Deserunt facilis voluptate facere. Alias esse, omnis.</p>
+            </section>
+        </div>
+        <form name="textEdit" id="textEdit" class="hiddenForm">
+            <textarea type="textarea" name="ta" class="textEdit"></textarea>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
